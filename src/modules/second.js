@@ -1,6 +1,11 @@
+import getData from "./getData"; // we can use a module from another module
+
 const second = () => {
 	const cartBtn = document.getElementById("cart");
-	console.log(cartBtn);
+
+	getData().then((data) => {
+		console.log(data);
+	});
 };
 
 export default second;
