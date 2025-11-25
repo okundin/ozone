@@ -16,7 +16,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cart */ \"./src/modules/cart.js\");\n/* harmony import */ var _modules_second__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/second */ \"./src/modules/second.js\");\n/* harmony import */ var _modules_postData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/postData */ \"./src/modules/postData.js\");\n\n\n\n\n(0,_modules_cart__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_modules_second__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n(0,_modules_postData__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n\n//# sourceURL=webpack://02_ozon/./src/index.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/cart */ \"./src/modules/cart.js\");\n/* harmony import */ var _modules_second__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/second */ \"./src/modules/second.js\");\n/* harmony import */ var _modules_postData__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/postData */ \"./src/modules/postData.js\");\n\n\n\n\n(0,_modules_cart__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\n(0,_modules_second__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\n\n\n//# sourceURL=webpack://02_ozon/./src/index.js?\n}");
 
 /***/ }),
 
@@ -36,7 +36,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = () => {\n\treturn fetch(\"http://localhost:3000/goods\").then((response) => {\n\t\treturn response.json();\n\t});\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/getData.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst getData = () => {\n\treturn fetch(\n\t\t\"https://ozone-396c0-default-rtdb.europe-west1.firebasedatabase.app/goods.json\"\n\t).then((response) => {\n\t\treturn response.json();\n\t});\n};\n\n// this is another comment\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (getData);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/getData.js?\n}");
 
 /***/ }),
 
@@ -46,7 +46,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \*********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData = () => {\n\treturn fetch(\"https://jsonplaceholder.typicode.com/posts\", {\n\t\tmethod: \"POST\",\n\t\tbody: JSON.stringify({\n\t\t\ttitle: \"andrew\",\n\t\t\tbody: \"player\",\n\t\t\tuserId: 81,\n\t\t}),\n\t\theaders: {\n\t\t\t\"Content-type\": \"application/json; charset=UTF-8\",\n\t\t},\n\t}).then((res) => res.json());\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/postData.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst postData = () => {\n\t// return fetch(\"http://localhost:3000/goods/6287\", {\n\t// \tmethod: \"DELETE\",\n\t// }).then((res) => res.json());\n\n\treturn fetch(\"http://localhost:3000/goods\", {\n\t\tmethod: \"POST\",\n\t\tbody: JSON.stringify({\n\t\t\ttitle: \"Ведьмак 3\",\n\t\t\tprice: 3000,\n\t\t\tsale: true,\n\t\t\timg: \"https://cdn1.ozone.ru/multimedia/c400/1023547851.jpg\",\n\t\t\tcategory: \"Игры и софт\",\n\t\t}),\n\t\theaders: {\n\t\t\t\"Content-type\": \"application/json; charset=UTF-8\",\n\t\t},\n\t}).then((res) => res.json());\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (postData);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/postData.js?\n}");
 
 /***/ }),
 
@@ -56,7 +56,7 @@ eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpa
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ \"./src/modules/getData.js\");\n // we can use a module from another module\n\nconst second = () => {\n\tconst cartBtn = document.getElementById(\"cart\");\n\n\t(0,_getData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((data) => {\n\t\tconsole.log(data);\n\t});\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/second.js?\n}");
+eval("{__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _getData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./getData */ \"./src/modules/getData.js\");\n/* harmony import */ var _postData__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./postData */ \"./src/modules/postData.js\");\n // we can use a module from another module\n\n\nconst second = () => {\n\tconst cartBtn = document.getElementById(\"cart\");\n\n\t(0,_getData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])().then((data) => {\n\t\tconsole.log(data);\n\t});\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (second);\n\n\n//# sourceURL=webpack://02_ozon/./src/modules/second.js?\n}");
 
 /***/ })
 

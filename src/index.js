@@ -4,4 +4,3 @@ import postData from "./modules/postData";
 
 cart();
 second();
-postData();
