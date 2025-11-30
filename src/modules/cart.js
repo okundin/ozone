@@ -19,7 +19,6 @@ const cart = () => {
 		cartItems.style.display = "";
 	};
 
-	//cartCloseBtn.onclick = closeCart;
 	cartCloseBtn.addEventListener("click", closeCart);
 };
 

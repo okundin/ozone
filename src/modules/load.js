@@ -1,12 +1,11 @@
 import getData from "./getData"; // we can use a module from another module
 import postData from "./postData";
+import renderGoods from "./renderGoods";
 
-const second = () => {
-	const cartBtn = document.getElementById("cart");
-
+const load = () => {
 	getData().then((data) => {
-		console.log(data);
+		renderGoods(data);
 	});
 };
 
-export default second;
+export default load;
