@@ -11,6 +11,7 @@ const cart = () => {
 	const cartTotal = cartItems.querySelector(".cart-total > span");
 	const cartWrapper = document.querySelector(".cart-wrapper");
 	const orderSubmitBtn = cartItems.querySelector(".cart-confirm");
+	const cartGoodsCounter = cartBtn.querySelector(".counter");
 
 	// open hidden cart items by click
 	const openCart = () => {
@@ -42,7 +43,7 @@ const cart = () => {
 			// getting goods from localStorage
 			const goods = localStorage.getItem("goods"); // returns a string of goods
 			const goodsArray = JSON.parse(goods); // converts the string of goods to array of goods in JSON format
-			// shows either cart with items or empty cart
+			// shows either cart with added items or empty cart
 			const cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : [];
 			// get an item from the goods array using data-key value
 			const goodsItem = goodsArray.find((item) => {
@@ -51,6 +52,8 @@ const cart = () => {
 			// add the item to the user cart
 			cart.push(goodsItem);
 			localStorage.setItem("cart", JSON.stringify(cart));
+			// update cart goods counter
+			cartGoodsCounter.textContent++;
 		}
 	});
 
@@ -71,6 +74,7 @@ const cart = () => {
 
 			// save new array of items to the local storage after item removal
 			localStorage.setItem("cart", JSON.stringify(cart));
+			cartGoodsCounter.textContent--;
 
 			renderCart(cart);
 
@@ -91,8 +95,9 @@ const cart = () => {
 			localStorage.removeItem("cart");
 			// render updated cart
 			renderCart([]); // render cart with empty array
-			// recalculate cart total amount; reduce method iterates cart items
+			// recalculate cart total amount;
 			cartTotal.textContent = 0;
+			cartGoodsCounter.textContent = 0;
 		});
 	});
 };
